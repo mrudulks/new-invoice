@@ -29,6 +29,7 @@
         </div>
       </div>
     </div>
+    <button @click="local()">set local</button>
   </div>
 </template>
 <script>
@@ -41,6 +42,9 @@
       }
     },
     methods: {
+      fetchBoard(){
+        this.workSpaceList = JSON.parse(localStorage.getItem('board'));
+      },
       createWorkspace() {
         var id = Math.floor((Math.random() * 1000));
         this.workSpaceList.push({
@@ -55,8 +59,15 @@
         column.items.push({
             id:id,
             name:column.newCardName        })
+      },
+      local(){
+        var work = JSON.stringify(this.workSpaceList)
+        localStorage.setItem('board',work)
       }
     },
+    mounted(){
+      this.fetchBoard()
+    }
   }
 
 </script>
