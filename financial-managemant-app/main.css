@@ -6,6 +6,7 @@
     --text-color2: #929EAE;
     --text-color3:#78778B;
     --grey1:#FAFAFA;
+    --grey2:#F8F8F8;
 }
 
 /* app */
@@ -79,4 +80,54 @@
 .app-contents .grid-section{
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+}
+.section1{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-section .card-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+.card-section .card-grid .card{
+    padding: 1.2rem;
+    background-color: var(--grey2);
+    border: none;
+}
+.card-section .card-grid .card.active{
+    background-color: var(--darkish-coolor);
+}
+
+.card-section .card-grid .card .card-contents{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.card-section .card-grid .card .card-contents .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #EBE8E8;
+    border-radius: 50%;
+}
+
+.card-section .card-grid .card .card-contents .text p {
+    color: var(--text-color2);
+    margin-bottom: .5rem;
+}
+.card-section .card-grid .card .card-contents .text h3{
+    color: var(--text-color1);
+    font-weight: 700;
+}
+.card-section .card-grid .card.active .card-contents .icon{
+    background-color: #4E5257;
+}
+.card-section .card-grid .card.active .card-contents .text h3{
+    color: #fff;
 }
